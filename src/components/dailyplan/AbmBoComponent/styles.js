@@ -1,0 +1,41 @@
+import Colors from '../../../styles/colorsStyles';
+
+export default {
+  topRow: {
+    flexDirection: 'row',
+  },
+  rightTopRow: {
+    flex: 1,
+    alignItems: 'flex-end',
+    justifyContent: 'center'
+  },
+  rightTopRowTextContainer: { justifyContent: 'center', alignItems: 'center' },
+  rightTopRowContainer: { flexDirection: 'row', justifyContent: 'center' },
+  rightTopRowText: {
+    color: Colors.light_black,
+  },
+  date_heading: {
+    paddingTop: 15,
+    paddingBottom: 15,
+    textAlign: 'center',
+    color: Colors.gray_dark
+  },
+  secondaryTitle: {
+    marginTop: 5
+  },
+  masterTitle: {
+    color: Colors.white,
+    backgroundColor: Colors.lemon_yellow,
+    fontSize: 12,
+    paddingTop: 5,
+    paddingBottom: 5,
+    paddingLeft: 10,
+    paddingRight: 10,
+    borderRadius: 8,
+    alignSelf: 'flex-start',
+    marginRight: 10,
+  },
+  rightAlign: {
+    flexDirection: 'row'
+  }
+};

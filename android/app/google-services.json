@@ -1,0 +1,91 @@
+{
+  "project_info": {
+    "project_number": "1043472602153",
+    "firebase_url": "https://zydus-hybrid-app.firebaseio.com",
+    "project_id": "zydus-hybrid-app",
+    "storage_bucket": "zydus-hybrid-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1043472602153:android:9e225a803200d60fbef838",
+        "android_client_info": {
+          "package_name": "com.zydus.frontline"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1043472602153-ia519i3upcabqov00vjc7sof8pd5ci2p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMXHi0SPh3YLtAXfRxdzhYsm1Uwlvhink"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1043472602153-ia519i3upcabqov00vjc7sof8pd5ci2p.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1043472602153-vtehmvobl8b3l4tnvcneosmq5r1lqe81.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.zydusfrontlinemobile"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1043472602153:android:d496be3f4196bfb9bef838",
+        "android_client_info": {
+          "package_name": "com.zydusfrontlinemobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1043472602153-kaut73mrkf92fmkm2onp8dvc1k6knb5u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.zydusfrontlinemobile",
+            "certificate_hash": "b6cdaae3d7caf3fe3acb25bbb9170c5c3edd994e"
+          }
+        },
+        {
+          "client_id": "1043472602153-ia519i3upcabqov00vjc7sof8pd5ci2p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMXHi0SPh3YLtAXfRxdzhYsm1Uwlvhink"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1043472602153-ia519i3upcabqov00vjc7sof8pd5ci2p.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1043472602153-vtehmvobl8b3l4tnvcneosmq5r1lqe81.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.zydusfrontlinemobile"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

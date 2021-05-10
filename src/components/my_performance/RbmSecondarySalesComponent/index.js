@@ -1,0 +1,161 @@
+import React from 'react';
+import {
+  Body, Container, H3, Icon, ListItem, Right, View
+} from 'native-base';
+import { ScrollView, Text } from 'react-native';
+import ScrollableTabView, { ScrollableTabBar } from 'react-native-scrollable-tab-view';
+import ParentView from '../../ParentView';
+import styles from './styles';
+import { displayDecimal, numberTransformer } from '../../../util/NumberTrasformer';
+import TabStyles from '../../../styles/tabStyles';
+import Colors from '../../../styles/colorsStyles';
+
+export default class RbmSecondarySalesComponent extends React.Component {
+  renderTab1List() {
+    const { areaWiseSales, onAreaItemPress } = this.props;
+    if (!Array.isArray(areaWiseSales)) {
+      return null;
+    }
+    return areaWiseSales.map((item, index) => {
+      const {
+        id, section_1, section_2, section_3, section_4, title
+      } = item;
+
+      return (
+        <ListItem key={id} onPress={() => onAreaItemPress(index)}>
+          <Body>
+            <Text style={styles.itemHeading}>{title}</Text>
+
+            <View style={styles.rowContainer}>
+              <View style={styles.rowItem}>
+                <Text style={styles.itemValues}>{section_1.label}</Text>
+                <Text style={styles.itemValues}>{numberTransformer(section_1.value, 2)}</Text>
+
+                <Text style={styles.itemMarginTop}>{section_3.label}</Text>
+                <Text style={styles.itemValues}>{numberTransformer(section_3.value, 2)}</Text>
+              </View>
+
+              <View style={styles.rowItem}>
+                <Text style={styles.itemValues}>{section_2.label}</Text>
+                <Text style={styles.itemValues}>
+                  {section_2.value}
+                  {' '}
+                  %
+                </Text>
+
+                <Text style={styles.itemMarginTop}>{section_4.label}</Text>
+                <Text style={styles.itemValues}>
+                  {displayDecimal(section_4.value)}
+                  {' '}
+                  %
+                </Text>
+              </View>
+            </View>
+          </Body>
+
+          <Right>
+            <Icon
+              name="rightcircle"
+              type="AntDesign"
+              style={{ color: Colors.black, fontSize: 16 }}
+            />
+          </Right>
+
+        </ListItem>
+      );
+    });
+  }
+
+  renderTab2List() {
+    const { brandWiseSales, onBrandItemPress } = this.props;
+    if (!Array.isArray(brandWiseSales)) {
+      return null;
+    }
+    return brandWiseSales.map((item, index) => {
+      const {
+        id, section_1, section_2, section_3, section_4, title
+      } = item;
+
+      return (
+        <ListItem key={id} onPress={() => onBrandItemPress(index)}>
+          <Body>
+            <Text style={styles.itemHeading}>{title}</Text>
+
+            <View style={styles.rowContainer}>
+              <View style={styles.rowItem}>
+                <Text style={styles.itemValues}>{section_1.label}</Text>
+                <Text style={styles.itemValues}>{numberTransformer(section_1.value, 2)}</Text>
+
+                <Text style={styles.itemMarginTop}>{section_3.label}</Text>
+                <Text style={styles.itemValues}>{numberTransformer(section_3.value, 2)}</Text>
+              </View>
+
+              <View style={styles.rowItem}>
+                <Text style={styles.itemValues}>{section_2.label}</Text>
+                <Text style={styles.itemValues}>
+                  {section_2.value}
+                  {' '}
+                  %
+                </Text>
+
+                <Text style={styles.itemMarginTop}>{section_4.label}</Text>
+                <Text style={styles.itemValues}>
+                  {displayDecimal(section_4.value)}
+                  {' '}
+                  %
+                </Text>
+              </View>
+            </View>
+          </Body>
+
+          <Right>
+            <Icon
+              name="rightcircle"
+              type="AntDesign"
+              style={{ color: Colors.black, fontSize: 16 }}
+            />
+          </Right>
+
+        </ListItem>
+      );
+    });
+  }
+
+  render() {
+    const {
+      loading, date_range, areaWiseSales, brandWiseSales
+    } = this.props;
+
+    return (
+      <ParentView
+        loading={loading}
+        connected={this.props.connected}
+        onRefresh={() => this.props.onRefresh()}
+        style={styles.container}
+      >
+        <Container>
+          <H3 style={styles.date_heading}>{date_range}</H3>
+          <ScrollableTabView
+            tabBarBackgroundColor={TabStyles.tabStyle.backgroundColor}
+            tabBarUnderlineStyle={TabStyles.tabBarUnderlineStyle}
+            tabBarInactiveTextColor={TabStyles.textStyle.color}
+            tabBarActiveTextColor={TabStyles.activeTextStyle.color}
+            initialPage={0}
+            renderTabBar={() => <ScrollableTabBar />}
+          >
+            <View tabLabel="Area Wise Sales">
+              <ScrollView ref={(scrollView) => this._scrollView = scrollView}>
+                {areaWiseSales ? this.renderTab1List() : null}
+              </ScrollView>
+            </View>
+            <View tabLabel="Brand Wise Region Sales">
+              <ScrollView ref={(scrollView) => this._scrollView = scrollView}>
+                {brandWiseSales ? this.renderTab2List() : null}
+              </ScrollView>
+            </View>
+          </ScrollableTabView>
+        </Container>
+      </ParentView>
+    );
+  }
+}
